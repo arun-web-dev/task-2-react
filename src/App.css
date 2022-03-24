@@ -1,42 +1,84 @@
 .App {
   text-align: center;
+  color: #fff;
+  margin-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-top: 20px;
+}
+.App,
+.no-active .App-heading {
+  animation: fade-out 0.6s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App,
+.active .App-heading {
+  animation: fade-in 0.6s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.click-me-btn {
+  background-color: #8b008b93;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.click-me-btn:hover {
+  background-color: #8b008b;
+  transform: translateY(-3px);
+}
+.click-me-btn:active {
+  transform: translateY(1px);
+}
+.click-me-btn:focus {
+  border: none;
+  outline: none;
+}
+
+.class-component-container {
+  text-align: left;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.class-component-container p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.functional-component-container {
+  text-align: left;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.functional-component-container p {
+  margin: 10px 0;
+  font-size: 18px;
 }
